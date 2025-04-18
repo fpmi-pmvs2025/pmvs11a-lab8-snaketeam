@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#4CAF50"/>
+            <size android:width="40dp" android:height="40dp"/>
+        </shape>
+    </item>
+
+    <!-- Left Eye -->
+    <item android:left="8dp" android:top="8dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/black"/>
+            <size android:width="8dp" android:height="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Left Eye Glisten -->
+    <item android:left="10dp" android:top="10dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white"/>
+            <size android:width="1.5dp" android:height="1.5dp"/>
+        </shape>
+    </item>
+
+    <!-- Right Eye -->
+    <item android:right="8dp" android:top="8dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/black"/>
+            <size android:width="8dp" android:height="8dp"/>
+        </shape>
+    </item>
+
+    <!-- Right Eye Glisten -->
+    <item android:right="10dp" android:top="10dp">
+        <shape android:shape="oval">
+            <solid android:color="@android:color/white"/>
+            <size android:width="1.5dp" android:height="1.5dp"/>
+        </shape>
+    </item>
+</layer-list>
