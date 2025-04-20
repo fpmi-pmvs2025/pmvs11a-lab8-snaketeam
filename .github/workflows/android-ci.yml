@@ -36,6 +36,19 @@ jobs:
       working-directory: snakeGame
       run: ./gradlew testDebugUnitTest
 
-    # - name: Run Instrumented (UI) Tests
-    #   working-directory: snakeGame
-    #   run: ./gradlew connectedDebugAndroidTest
+    # --- New steps to run UI tests ---
+    
+    - name: Install Emulator
+      run: |
+        echo "y" | sdkmanager "system-images;android-30;google_apis;x86_64"
+        echo "no" | avdmanager create avd -n test -k "system-images;android-30;google_apis;x86_64" --device "pixel"
+    
+    - name: Start Emulator
+      run: |
+        nohup emulator -avd test -no-snapshot-save -noaudio -no-boot-anim -accel on -gpu swiftshader &
+        adb wait-for-device
+        adb shell input keyevent 82
+
+    - name: Run Instrumented (UI) Tests
+      working-directory: snakeGame
+      run: ./gradlew connectedDebugAndroidTest
